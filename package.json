@@ -1,0 +1,31 @@
+{
+  "name": "authentication-user",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PedroOliveiraWish/Authentication-User.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/PedroOliveiraWish/Authentication-User/issues"
+  },
+  "homepage": "https://github.com/PedroOliveiraWish/Authentication-User#readme",
+  "devDependencies": {
+    "prisma": "^6.6.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.6.0",
+    "sqlite3": "^5.1.7"
+  }
+}
