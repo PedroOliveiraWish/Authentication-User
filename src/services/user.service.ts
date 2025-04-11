@@ -12,7 +12,15 @@ export class UserService {
             if (user) {
                 // Create a new user in the database using Prisma Client
                 const new_user = await prisma.user.create({
-                    data: user
+                    data: {
+                        ...user,
+                        posts: {
+                            create: user.posts?.map(post => ({
+                                title: post.title,
+                                content: post.content,
+                            }))
+                        }
+                    }
                 })
         
                 // Return the new created user
@@ -55,4 +63,14 @@ export class UserService {
         }
     }
 
+    async getAllUsers(): Promise<User[]> {
+        try {
+            // Get all users from the database using Prisma Client
+            const users = await prisma.user.findMany();
+            return users;
+        } catch (error) {
+            console.error("Error fetching users:", error);
+            throw new Error("Error fetching users");
+        }
+    }
 }
